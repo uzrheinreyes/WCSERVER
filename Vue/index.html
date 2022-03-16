@@ -1,0 +1,112 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+        <!-- Insert here the link to the CDN Vue package -->
+        <script src="https://unpkg.com/vue@3.0.2"></script>
+
+        <title>Vue JS Demo Application</title>
+
+        <style>
+          * {
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          p {
+            color: #777777;
+          }
+          b {
+            background: rgb(235, 235, 235);
+            font-family: 'Consolas', monospace;
+          }
+        </style>
+    </head>
+
+    <body>
+        
+        <h2>Embedding the <b>v-on</b> and <b>@</b> directives in HTML</h2>
+
+        <!-- Create a <div> tag with "app" ID-->
+        <div id="app">
+            <!-- Whatever you insert here is controlled by Vue -->
+            <p>{{ title }} - {{ author }} - {{ age }}</p>
+
+            <!-- Events on Vue using v-on -->
+            <button v-on:click="age++">Get Older</button>
+            <button v-on:click="age--">Get Younger</button>
+            <button @click="title = 'The title has changed.'">Change Title</button>
+        </div>
+
+        <!-- Insert below the code to link to app.js -->
+        <script src="app.js"></script>
+        <br>
+
+        <!-------------------------------------------------------------------------->
+
+        <br>
+        <h2>Embedding the two-way data binding on HTML</h2>
+
+        <!-- Two-way data binding -->
+        <div id="two-way-binding">
+          <p>{{message}}</p>
+          <input v-model="message">
+        </div>
+
+        <!-- Link to twoway.js-->
+        <script src="twoway.js"></script>
+        <br>
+
+        <!-------------------------------------------------------------------------->
+        
+        <br>
+        <h2>The use of <b>v-if</b> in HTML</h2>
+
+        <!-- Using v-if -->
+        <div id="conditional-rendering">
+          <span v-if="seen">Now you see me</span>
+        </div>
+
+        <!-- Link to conditionalif.js -->
+        <script src="conditionalif.js"></script>
+        <br>
+
+        <!-------------------------------------------------------------------------->
+        
+        <br>
+        <h2>The integration of <b>v-if</b> and <b>v-else</b> statements in HTML</h2>
+
+        <!-- This is hooked-up to a method in the books.js -->
+        <div id="books">
+          <div v-if="showBooks">
+            <p>{{ btitle }} {{ bauthor }} {{ year }}</p>
+          </div>
+
+          <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else> Show Books</span>
+          </button>
+        </div>
+
+        <!-- Link to books.js -->
+        <script src="books.js"></script>
+        <br>
+
+        <!-------------------------------------------------------------------------->
+        
+        <br>
+        <h2>Embedding the JS code usng <b>v-for</b></h2>
+        <!-- Using v-for directive -->
+        <div id="list-rendering">
+          <ol>
+            <li v-for="todo in todos">
+              {{ todo.text }}
+            </li>
+          </ol>
+        </div>
+
+        <!-- Link to listfor.js -->
+        <script src="listfor.js"></script>
+        
+    </body>
+</html>
